@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Phil
- * Date: 26.01.2016
- * Time: 21:41
- */
 
 namespace App;
 
-class Model
+abstract class Model
 {
 
     const TABLE = '';
