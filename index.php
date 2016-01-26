@@ -2,5 +2,6 @@
 
 require __DIR__ . '/autoload.php';
 
-$db = new \App\Db();
-$data = $db->query('SELECT * FROM foo');
+$users = \App\Models\User::findAll();
+
+var_dump($users);
