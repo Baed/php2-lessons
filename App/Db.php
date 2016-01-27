@@ -11,6 +11,7 @@ class Db
     public function __construct()
     {
         $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
+        $this->dbh->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false );
     }
 
     public function execute($sql, $substitutions = array())

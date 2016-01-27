@@ -2,6 +2,6 @@
 
 require __DIR__ . '/autoload.php';
 
-$users = \App\Models\User::findAll();
+$latest_news = \App\Models\News::getLatestNews();
 
-$html = new \App\View('index', $users);
+$html = new \App\View('index', $latest_news);
