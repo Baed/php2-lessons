@@ -15,4 +15,16 @@ class News extends Model
     public $created_at;
     public $modifyed_at;
 
+    public static function getLatestNews($count = 3)
+    {
+        $db = new \App\Db();
+        $res = $db->query(
+            'SELECT * FROM ' . self::TABLE,
+            self::class
+        );
+        if (count($res) == 0) {
+            return false;
+        }
+        return $res;
+    }
 }
