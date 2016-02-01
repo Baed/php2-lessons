@@ -79,6 +79,16 @@ abstract class Model
         $db->execute($sql, $values);
     }
 
+    public function save()
+    {
+        if ($this->isNew()) {
+            $this->insert();
+        } else {
+            $this->update();
+        }
+
+    }
+
     public static function getLatest(int $count)
     {
         $db = Db::instance();

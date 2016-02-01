@@ -23,6 +23,10 @@
 <p>Третье задание</p>
 <a href="test_lesson2_task3.php?id=1&email=newnew@example.com">Обновляем email пользователя с id=1 на email newnew@example.com</a><br />
 
+<p>Четвертое задание</p>
+<a href="test_lesson2_task4.php?id=1&email=newnew@example.com&name=Жуков Аниссий">Меняем со значеним id=1</a><br />
+<a href="test_lesson2_task4.php?email=newnew@example.com&name=Жуков Аниссий">Убираем id - записывается новый</a><br />
+
 <p>Результат</p>
 
 <?php
