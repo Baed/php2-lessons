@@ -13,6 +13,7 @@ switch($op){
         $article->author = 1;
         $article->created_at = date('Y-m-d H:i:s');
         $article->save();
+        $html = new \App\View('admin_redirect', array('message'=>'Новость добавлена'));
         break;
 
     default:
