@@ -20,6 +20,9 @@
 <p>Второе задание</p>
 <a href="test_lesson2_task2.php">Создать пользователя</a><br />
 
+<p>Третье задание</p>
+<a href="test_lesson2_task3.php?id=1&email=newnew@example.com">Обновляем email пользователя с id=1 на email newnew@example.com</a><br />
+
 <p>Результат</p>
 
 <?php

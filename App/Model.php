@@ -56,6 +56,29 @@ abstract class Model
         $this->id = $db->getLastInsertId();
     }
 
+    public function update()
+    {
+        if ($this->isNew()) {
+            return;
+        }
+        $values = [];
+        $sql = '
+            UPDATE ' . static::TABLE . ' SET ';
+
+        foreach ($this as $k => $v) {
+            $values[':'.$k] = $v;
+            if ($k == 'id'){
+                continue;
+            }
+            $sql .= $k . '=:' . $k;
+            $sql .= ', ';
+        }
+        $sql = substr($sql, 0, -2);
+        $sql .= ' WHERE id=:id';
+        $db = Db::instance();
+        $db->execute($sql, $values);
+    }
+
     public static function getLatest(int $count)
     {
         $db = Db::instance();
