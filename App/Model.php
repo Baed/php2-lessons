@@ -25,9 +25,6 @@ abstract class Model
             static::class,
             array('id' => $id)
         );
-        if (count($res)==0){
-            return false;
-        }
         return $res;
     }
     public function isNew()
