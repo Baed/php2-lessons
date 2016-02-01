@@ -6,7 +6,13 @@ $op = $_REQUEST['op'];
 switch($op){
 
     case 'add':
-        var_dump($_REQUEST);
+        $article = new \App\Models\News();
+        $article->title = $_REQUEST['title'];
+        $article->intro_text = $_REQUEST['intro_text'];
+        $article->full_text = $_REQUEST['intro_text'];
+        $article->author = 1;
+        $article->created_at = date('Y-m-d H:i:s');
+        $article->save();
         break;
 
     default:
