@@ -18,7 +18,7 @@ abstract class Model
 
     public static function findById($id)
     {
-        $db = new Db();
+        $db = Db::instance();
         $res = $db->query_one_element(
             'SELECT * FROM ' . static::TABLE
             . ' WHERE id=:id',
@@ -53,6 +53,22 @@ VALUES
         ';
         $db = Db::instance();
         $db->execute($sql, $values);
+    }
+
+    public static function getLatest(int $count)
+    {
+        $db = Db::instance();
+        $res = $db->query(
+            'SELECT * FROM ' . static::TABLE
+            . ' ORDER BY created_at DESC'
+            . ' LIMIT 0,' . $count,
+            static::class
+        );
+
+        if (count($res) == 0) {
+            return [];
+        }
+        return $res;
     }
 
 }
