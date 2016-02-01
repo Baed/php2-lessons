@@ -79,6 +79,18 @@ abstract class Model
         $db->execute($sql, $values);
     }
 
+    public function delete()
+    {
+        if ($this->isNew()) {
+            return;
+        }
+        $sql = '
+            DELETE FROM ' . static::TABLE . '
+            WHERE id=:id';
+        $db = Db::instance();
+        $db->execute($sql, array(':id' => $this->id));
+    }
+
     public function save()
     {
         if ($this->isNew()) {
@@ -86,7 +98,6 @@ abstract class Model
         } else {
             $this->update();
         }
-
     }
 
     public static function getLatest(int $count)

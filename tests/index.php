@@ -27,6 +27,10 @@
 <a href="test_lesson2_task4.php?id=1&email=newnew@example.com&name=Жуков Аниссий">Меняем со значеним id=1</a><br />
 <a href="test_lesson2_task4.php?email=newnew@example.com&name=Жуков Аниссий">Убираем id - записывается новый</a><br />
 
+<p>Пятое задание</p>
+<a href="test_lesson2_task5.php?id=1">Удаляем со значеним id=1</a><br />
+
+
 <p>Результат</p>
 
 <?php
