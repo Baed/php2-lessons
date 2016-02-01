@@ -33,5 +33,11 @@ class Db
         return [];
     }
 
+    public function query_one_element($sql, $class, $substitutions = array())
+    {
+        $sth = $this->dbh->prepare($sql);
+        $res = $sth->execute($substitutions);
+        return $sth->fetchObject($class);
+    }
 
 }

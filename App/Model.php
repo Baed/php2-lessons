@@ -19,7 +19,7 @@ abstract class Model
     public static function findById($id)
     {
         $db = new Db();
-        $res = $db->query(
+        $res = $db->query_one_element(
             'SELECT * FROM ' . static::TABLE
             . ' WHERE id=:id',
             static::class,

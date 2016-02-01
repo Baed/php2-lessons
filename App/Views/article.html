@@ -5,9 +5,9 @@
     <title></title>
 </head>
 <body>
-<h1><?php echo $objects[0]->title; ?></h1>
-<p style="text-decoration: underline; font-size: small">Опубликовал <?php echo $objects[0]->author; ?> в <?php echo $objects[0]->created_at; ?></p>
-<p><?php echo $objects[0]->intro_text; ?></p>
-<p><?php echo $objects[0]->full_text; ?></p>
+<h1><?php echo $objects->title; ?></h1>
+<p style="text-decoration: underline; font-size: small">Опубликовал <?php echo $objects->author; ?> в <?php echo $objects->created_at; ?></p>
+<p><?php echo $objects->intro_text; ?></p>
+<p><?php echo $objects->full_text; ?></p>
 </body>
 </html>
