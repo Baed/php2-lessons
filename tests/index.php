@@ -1,3 +1,4 @@
+
 <h1>1 урок</h1>
 <p>Добавление подстановок</p>
 <a href="test1.php">Выбрать всех</a><br />
@@ -16,5 +17,11 @@
 <a href="test_lesson2_task1.php">Чтение конфига</a><br />
 <a href="test_lesson2_task1_1.php">Запись конфига</a><br />
 
+<p>Второе задание</p>
+<a href="test_lesson2_task2.php">Создать пользователя</a><br />
+
 <p>Результат</p>
 
+<?php
+DEFINE ('SITE_ROOT' , __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR);
+require __DIR__ . '/../autoload.php';

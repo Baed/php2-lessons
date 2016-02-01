@@ -40,4 +40,8 @@ class Db
         return $sth->fetchObject($class);
     }
 
+    public function getLastInsertId()
+    {
+        return $this->dbh->lastInsertId();
+    }
 }
