@@ -19,9 +19,9 @@ class News extends Model
 	/**
 	 * Геттер
 	 * Обработка обращения к author
-	 * @return object Возвращает объект Author, если есть author_id
-	 * @return FALSE Если author_id не установлен
-	 * @return NULL Если запрошено свойство которого, нет
+	 * @return object| FALSE | NULL Возвращает объект Author, если есть author_id
+	 *                              FALSE Если author_id не установлен
+	 *                              NULL Если запрошено свойство которого, нет
 	 */
 	
     public function __get($k)
