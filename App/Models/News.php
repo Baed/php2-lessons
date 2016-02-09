@@ -15,7 +15,15 @@ class News extends Model
     public $full_text;
     public $created_at;
     public $modifyed_at;
-
+    
+	/**
+	 * Геттер
+	 * Обработка обращения к author
+	 * @return object Возвращает объект Author, если есть author_id
+	 * @return FALSE Если author_id не установлен
+	 * @return NULL Если запрошено свойство которого, нет
+	 */
+	
     public function __get($k)
     {	
     	if ($k == 'author'){
