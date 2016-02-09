@@ -2,19 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title><?php echo $title;?></title>
 </head>
 <body>
 <?php
-foreach ($objects as $news)
-{
-?>
-<p><?php echo $news->title; ?>&nbsp;
-<a href="admin.php?op=edit&id=<?php echo $news->id; ?>">Редактировать</a>&nbsp;
-<a href="admin.php?op=delete&id=<?php echo $news->id; ?>">Удалить</a></p>
-<?php
-};
-?>
+foreach ($articles as $article) : ?>
+<p><?php echo $article->title; ?>&nbsp;
+<a href="admin.php?op=edit&id=<?php echo $article->id; ?>">Редактировать</a>&nbsp;
+<a href="admin.php?op=delete&id=<?php echo $article->id; ?>">Удалить</a></p>
+<? endforeach; ?>
 <h1>Создать новость</h1>
 <form action="admin.php" method="post">
     <input type="hidden" name="op" value="add" />
