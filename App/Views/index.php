@@ -16,7 +16,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
     	<?php echo $article->title; ?>
-    	<p style="text-decoration: underline; font-size: small">Опубликовал <?php echo $article->author; ?> в <?php echo $article->created_at; ?></p>
+    	<p style="text-decoration: underline; font-size: small">Опубликовал <?php echo $article->author->name; ?> в <?php echo $article->created_at; ?></p>
     </div>
     <div class="panel-body">
     	<p><?php echo $article->intro_text; ?></p>

@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1><?php echo $article->title; ?></h1>
-<p style="text-decoration: underline; font-size: small">Опубликовал <?php echo $article->author; ?> в <?php echo $article->created_at; ?></p>
+<p style="text-decoration: underline; font-size: small">Опубликовал <?php echo $article->author->name; ?> в <?php echo $article->created_at; ?></p>
 <p><?php echo $article->intro_text; ?></p>
 <p><?php echo $article->full_text; ?></p>
 
