@@ -2,7 +2,7 @@
 namespace App;
 trait GetterSetter 
 {
-	protected static $data = [];
+	protected $data = [];
     public function __set($k, $v)
     {
         $this->data[$k] = $v;
@@ -17,5 +17,6 @@ trait GetterSetter
     {
         return count($this->data);
     }
+
 
  }
