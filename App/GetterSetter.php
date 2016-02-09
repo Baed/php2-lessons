@@ -13,6 +13,11 @@ trait GetterSetter
         return $this->data[$k];
     }
 
+    public function __isset($k)
+    {
+    	return isset($this->data[$k]);
+    }
+
     public function count()
     {
         return count($this->data);
