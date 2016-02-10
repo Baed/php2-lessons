@@ -9,7 +9,7 @@ class News extends Controller
     }
     protected function actionIndex()
     {
-        $this->view->title = 'Мой крутой сайт!';
+        $this->view->title .= ' Новости.';
         $this->view->articles = \App\Models\News::findAll();
         $this->view->display(__DIR__ . '/../Views/index.php');
     }
@@ -17,6 +17,7 @@ class News extends Controller
     {
         $id = (int)$_GET['id'];
         $this->view->article = \App\Models\News::findById($id);
-        $this->view->display(__DIR__ . '/../Views/one.php');
+        $this->view->title .= $this->view->article->title;
+        $this->view->display(__DIR__ . '/../Views/article.php');
     }
 }
