@@ -1,7 +1,6 @@
 <?php
 
 require __DIR__ . '/autoload.php';
-
 $action = isset($_REQUEST['action'])?$_REQUEST['action']:'Index';
 
 $controller = new \App\Controllers\Admin();
