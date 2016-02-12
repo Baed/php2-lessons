@@ -16,5 +16,9 @@ abstract class Controller
         $this->beforeAction();
         return $this->$methodName();
     }
-
+    public function existsAction($action)
+    {
+        $methodName = 'action' . $action;
+        return method_exists($this, $methodName);
+    }
 }
