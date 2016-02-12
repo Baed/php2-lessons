@@ -6,6 +6,6 @@
 </head>
 <body>
 <h3><?php echo $message; ?></h3>
-<p><a href="/admin.php">Вернуться на главную</a></p>
+<p><a href="/admin/">Вернуться на главную</a></p>
 </body>
 </html>

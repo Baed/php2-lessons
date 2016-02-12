@@ -15,29 +15,29 @@ class Admin extends AdminController
     }
     protected function actionEdit()
     {
-        $id = (int)$_GET['id'];
+        $id = (int)$_REQUEST['id'];
         $this->view->title .= ' Редактирование новости.';
         $this->view->article = \App\Models\News::findById($id);
         $this->view->display(__DIR__ . '/../Views/admin_edit.php');
     }
     protected function actionDelete()
     {
-        $id = (int)$_GET['id'];
+        $id = (int)$_REQUEST['id'];
         \App\Models\News::findById($id)->delete();
-        $view->message = "Новость удалена";
-        $view->display(__DIR__ . '/../Views/admin_redirect.php');
+        $this->view->message = "Новость удалена";
+        $this->view->display(__DIR__ . '/../Views/admin_redirect.php');
 
     }
     protected function actionSave()
     {
-        $id = (int)$_GET['id'];
+        $id = (int)$_REQUEST['id'];
         $article = \App\Models\News::findById($id);
         $article->title = $_REQUEST['title'];
         $article->intro_text = $_REQUEST['intro_text'];
         $article->full_text = $_REQUEST['full_text'];
         $article->save();
-        $view->message = "Новость обновлена";
-        $view->display(__DIR__ . '/../Views/admin_redirect.php');
+        $this->view->message = "Новость обновлена";
+        $this->view->display(__DIR__ . '/../Views/admin_redirect.php');
 
     }
     protected function actionAdd()
@@ -49,8 +49,8 @@ class Admin extends AdminController
         $article->author_id = 1;
         $article->created_at = date('Y-m-d H:i:s');
         $article->save();
-        $view->message = "Новость добавлена";
-        $view->display(__DIR__ . '/../Views/admin_redirect.php');
+        $this->view->message = "Новость добавлена";
+        $this->view->display(__DIR__ . '/../Views/admin_redirect.php');
 
     }
 }
