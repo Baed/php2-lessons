@@ -20,7 +20,7 @@
     </div>
     <div class="panel-body">
     	<p><?php echo $article->intro_text; ?></p>
-		<p style="text-align: right"><a href="article.php?id=<?php echo $article->id; ?>">Читать далее...</a></p>
+		<p style="text-align: right"><a href="/News/One/?id=<?php echo $article->id; ?>">Читать далее...</a></p>
     </div>
 </div>
 
