@@ -18,7 +18,7 @@ class Config
     {
         $config_string = "<?php\r\n";
         foreach ($this->data as $k=>$v){
-            $config_string .= "\$data['" . $k . "'] = " . var_export($v, TRUE) . ";\r\n";
+            $config_string .= "\$data['" . $k . "'] = " . var_export($v, true) . ";\r\n";
         }
         return file_put_contents($this->config_file, $config_string);
     }

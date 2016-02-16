@@ -30,7 +30,7 @@ class News extends Model
 	    	if (isset($this->author_id)){
 	    		return \App\Models\Author::findById($this->author_id);
 	    	} else {
-	    		return FALSE;
+	    		return false;
 	    	}
     	}
     	return NULL;
