@@ -2,8 +2,9 @@
 
 require __DIR__ . '/autoload.php';
 
-$route = new \App\Route('http://php2-lessons/index.php?ctrl=Admin&action=One&id=1');
-var_dump($route->controllerName());
+//$route = new \App\Route('http://php2-lessons/News/One/');
+//$controller = new App\Controllers\News();
+var_dump(\App\Controllers\News::existsAction('One1'));
 die();
 $action = "Index";
 $path = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
