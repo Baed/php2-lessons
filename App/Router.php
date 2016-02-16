@@ -3,6 +3,8 @@ namespace App;
 
 class Router 
 {
+	use \App\Singleton;
+	
 	const DEFAULT_ACTION = 'Index';
 	protected $path;
 	protected $args = [];
