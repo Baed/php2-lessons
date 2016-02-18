@@ -8,7 +8,6 @@ class Route
 
 	function __construct($data)
 	{
-		var_dump($data);
 		$this->controller = $data['controller'];
 		$this->action = $data['action'];
 	}
