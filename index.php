@@ -1,6 +1,7 @@
 <?php
 
 require __DIR__ . '/autoload.php';
+
 try {
 $route = \App\Router::parseUrl($_SERVER['REQUEST_URI']);
 } catch (\App\Exceptions\RouteException $e){
@@ -9,4 +10,8 @@ $route = \App\Router::parseUrl($_SERVER['REQUEST_URI']);
 
 
 $controller = new $route->controller;
-$controller->action($route->action);
+try {
+	$controller->action($route->action);
+} catch (\App\Exceptions\DBException $e){
+	echo "Ошибка базы данных - " . $e->getMessage();
+} 

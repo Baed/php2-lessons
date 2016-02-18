@@ -1,6 +1,8 @@
 <?php
-
+// TODO вынести повторяющиеся строки
 namespace App;
+
+use \App\Exceptions\DBException;
 
 class Db
 {
@@ -11,14 +13,21 @@ class Db
 
     protected function __construct()
     {
-        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
-
+        try {
+            $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
+        } catch (\PDOException $e){
+            throw new DBException('Ошибка соединения с базой данных');
+        }
     }
 
     public function execute($sql, $substitutions = array())
     {
-        $sth = $this->dbh->prepare($sql);
-        $res = $sth->execute($substitutions);
+        try {
+            $sth = $this->dbh->prepare($sql);
+            $res = $sth->execute($substitutions);
+        } catch (\PDOException $e){
+            throw new DBException('Ошибка соединения в запросе');
+        }
         return $res;
     }
 
@@ -34,8 +43,12 @@ class Db
 
     public function query_one_element($sql, $class, $substitutions = array())
     {
-        $sth = $this->dbh->prepare($sql);
-        $res = $sth->execute($substitutions);
+        try {
+            $sth = $this->dbh->prepare($sql);
+            $res = $sth->execute($substitutions);
+        } catch (\PDOException $e){
+            throw new DBException('Ошибка соединения в запросе');
+        }
         return $sth->fetchObject($class);
     }
 
