@@ -11,7 +11,13 @@ class Router
 	private $path;
 	private $args = [];
 
-
+	public static function error($error_type='')
+	{
+		return new Route([
+			'controller' => '\\App\\Controllers\\Exceptions',
+			'action' => 'Error' . $error_type
+		]);
+	}
 	public static function parseUrl($url)
 	{
 		$path = trim(parse_url($url, PHP_URL_PATH), '/');
