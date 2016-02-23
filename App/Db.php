@@ -14,7 +14,7 @@ class Db
     protected function __construct()
     {
         try {
-            $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test', 'root', '1');
+            $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=test', 'root', '');
         } catch (\PDOException $e){
             throw new DBException('Ошибка соединения с базой данных');
         }
