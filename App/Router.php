@@ -7,17 +7,10 @@ class Router
 	use \App\Singleton;
 
 	const DEFAULT_ACTION = 'Index';
+	const DEFAULT_CONTROLLER = '\\App\\Controllers\\News';
 	private $path;
 	private $args = [];
 
-	public static function startPageController()
-	{
-		return '\\App\\Controllers\\News';
-	}
-	public static function startPageAction()
-	{
-		return 'Index';
-	}
 
 	public static function parseUrl($url)
 	{
@@ -25,8 +18,8 @@ class Router
 		parse_str(parse_url($url, PHP_URL_QUERY), $args);
 		switch ($path) {
 			case '':
-				$controller = self::startPageController();
-				$action = self::startPageAction();
+				$controller = self::DEFAULT_CONTROLLER;
+				$action = self::DEFAULT_ACTION;
 				break;
 			
 			case 'index.php':
